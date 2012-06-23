@@ -26,6 +26,7 @@ Or install it yourself as:
 
 Just include the desired theme css file
 
+    <%= stylesheet_include_tag 'sencha-touch2-rails/sencha-touch' %>
     <%= stylesheet_include_tag 'sencha-touch2-rails/apple' %>
 
 and JS file
@@ -34,8 +35,9 @@ and JS file
 
 Don't forget to add the chosen files to config.assets.precompile
     
-    config.assets.precompile << 'sencha-touch2-rails/sencha-touch-all'
+    config.assets.precompile << 'sencha-touch2-rails/sencha-touch.css'
     config.assets.precompile << 'sencha-touch2-rails/apple.css'
+    config.assets.precompile << 'sencha-touch2-rails/sencha-touch-all.js'
 
 Note: The sencha-touch-all\*.js versions should be used, as dynamic class
 loading is incompatible with the asset pipeline.
