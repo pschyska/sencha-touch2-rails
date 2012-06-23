@@ -1,21 +1,18 @@
-# Extjs4::Rails
+# Sencha::Touch2::Rails
 
-This is a simple Rails asset pipeline gem packaging the [Sencha Ext JS
-Framework](http://www.sencha.com/products/extjs/) (GPL version). It is
-based on [ext\_rails\_shim](https://github.com/sakuro/ext_rails_shim), 
+This is a simple Rails asset pipeline gem packaging the [Sencha Touch
+Framework](http://www.sencha.com/products/touch/) (GPL version). It is
+loosely based on [ext\_rails\_shim](https://github.com/sakuro/ext_rails_shim), 
 but without any Rails integration besides making the assets available to
 the asset pipeline.
 
-The Ext JS default themes have been recompiled to update the image
-assets paths to conform to Rails asset pipeline conventions.
-
-The currently bundled version is Ext JS 4.1.0 GPL
+The currently bundled version is Sencha Touch 2.0.1.1 GPL
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'extjs4-rails'
+    gem 'sencha-touch2-rails'
 
 And then execute:
 
@@ -23,29 +20,37 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install extjs4-rails
+    $ gem install sencha-touch2-rails
 
 ## Usage
 
 Just include the desired theme css file
 
-    <%= stylesheet_include_tag 'extjs4-rails/ext-all' %>
+    <%= stylesheet_include_tag 'sencha-touch2-rails/apple' %>
 
 and JS file
 
-    <%= javascript_include_tag 'extjs4-rails/ext-all' %> 
+    <%= javascript_include_tag 'sencha-touch2-rails/sencha-touch-all' %> 
 
 Don't forget to add the chosen files to config.assets.precompile
     
-    config.assets.precompile << 'extjs4-rails/ext-all.js'
-    config.assets.precompile << 'extjs4-rails/ext-all.css'
+    config.assets.precompile << 'sencha-touch2-rails/sencha-touch-all'
+    config.assets.precompile << 'sencha-touch2-rails/apple.css'
 
-Note: The ext-all\*.js versions should be used, as Ext JS' dynamic class
+Note: The sencha-touch-all\*.js versions should be used, as dynamic class
 loading is incompatible with the asset pipeline.
+
+## Rake task
+
+You can fork this gem and run
+
+    TOUCH_DIR=/path/to/sencha-touch-2.x.x.x rake sencha-touch2-rails:install
+
+to rebuild Sencha Touch, i.e. when you built your own theme.
 
 ## License
 
-[GPLv3](http://www.gnu.org/copyleft/gpl.html) like Ext JS.
+[GPLv3](http://www.gnu.org/copyleft/gpl.html) like Sencha Touch.
 
 ## Contributing
 
