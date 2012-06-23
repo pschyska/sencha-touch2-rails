@@ -1,7 +1,7 @@
 module Sencha
   module Touch2
     module Rails
-      VERSION = "0.0.1"
+      VERSION = "2.0.1.1.0"
     end
   end
 end

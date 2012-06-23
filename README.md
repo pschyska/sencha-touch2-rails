@@ -1,12 +1,21 @@
-# Sencha::Touch2::Rails
+# Extjs4::Rails
 
-TODO: Write a gem description
+This is a simple Rails asset pipeline gem packaging the [Sencha Ext JS
+Framework](http://www.sencha.com/products/extjs/) (GPL version). It is
+based on [ext\_rails\_shim](https://github.com/sakuro/ext_rails_shim), 
+but without any Rails integration besides making the assets available to
+the asset pipeline.
+
+The Ext JS default themes have been recompiled to update the image
+assets paths to conform to Rails asset pipeline conventions.
+
+The currently bundled version is Ext JS 4.1.0 GPL
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'sencha-touch2-rails'
+    gem 'extjs4-rails'
 
 And then execute:
 
@@ -14,11 +23,29 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install sencha-touch2-rails
+    $ gem install extjs4-rails
 
 ## Usage
 
-TODO: Write usage instructions here
+Just include the desired theme css file
+
+    <%= stylesheet_include_tag 'extjs4-rails/ext-all' %>
+
+and JS file
+
+    <%= javascript_include_tag 'extjs4-rails/ext-all' %> 
+
+Don't forget to add the chosen files to config.assets.precompile
+    
+    config.assets.precompile << 'extjs4-rails/ext-all.js'
+    config.assets.precompile << 'extjs4-rails/ext-all.css'
+
+Note: The ext-all\*.js versions should be used, as Ext JS' dynamic class
+loading is incompatible with the asset pipeline.
+
+## License
+
+[GPLv3](http://www.gnu.org/copyleft/gpl.html) like Ext JS.
 
 ## Contributing
 
